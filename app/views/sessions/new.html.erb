@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <%= form_tag '/login', :class => "form-signin mg-btm" do %>
+    <h1 class="heading-desc">
+      Login Bitches
+    </h1>
+    <div class="main">
+      <%= email_field_tag 'email', nil, placeholder: 'Email', class: "form-control" %>
+      <%= password_field_tag 'password', nil, placeholder: 'Password', class: 'form-control' %>
+
+      <%= button_tag "Continue", type: "submit", class: "btn btn-danger btn-block" %>
+    </div>
+
+    <strong>OR</strong>
+
+    <div class="social-box">
+      <div class="row mg-btm">
+        <div class="col-md-12">
+          <a href="#" class="btn btn-primary btn-block">
+            <i class="icon-facebook"></i>
+            Login with Facebook
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <a href="#" class="btn btn-info btn-block">
+            <i class="icon-twitter"></i>
+            Login with Twitter
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</form>
+</div>
+</div>
+<% end %>
+
+<script>
+$(function () {
+  var x = 0;
+  setInterval(function () {
+    x -= 1;
+    $('body').css('background-position', x + 'px 0');
+  }, 10);
+})
+</script>
