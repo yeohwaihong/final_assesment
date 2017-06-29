@@ -30,13 +30,28 @@ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'masonry-rails'
+gem 'kaminari'
+gem 'carrierwave'
+gem "mini_magick"
+gem 'cloudinary'
+gem "braintree"
+gem 'rest-client'
+gem 'sidekiq'
+gem 'searchkick'
+gem 'rails_12factor', group: :production
+gem 'will_paginate'
+gem 'fog'
+gem "paperclip"
+
 
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'momentjs-rails'
 
 group :development, :test do
