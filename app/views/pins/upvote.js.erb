@@ -1,0 +1,4 @@
+console.log("hello")
+console.log("<%= @pin.id %>")
+// $('#upvote-ajax').prepend("<%#= j (render partial: 'pin', locals: {pin: @pin} %>")
+$("#upvote-num-<%= @pin.id %>").html("<%= @pin.votes_for.size %>")

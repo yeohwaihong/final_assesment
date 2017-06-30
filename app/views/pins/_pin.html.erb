@@ -1,0 +1,23 @@
+  <div class="box panel panel-default">
+    <%= link_to (image_tag pin.image.url), pin %>
+    <%= link_to like_pin_path(pin), remote: true, method: :put, class: "btn btn-secondary" do %>
+    <div id='upvote-ajax'>
+      <i class="glyphicon glyphicon-fire logo-small-4" aria-hidden="true"></i>
+      <div id="upvote-num-<%= pin.id %>">
+         <%= pin.get_upvotes.size %>
+      </div>
+    </div>
+    <% end %>
+    <div class="pin-description">
+    <h2>
+      <%= link_to pin.title, pin %>
+    </h2>
+    <h3>
+    <%=truncate(pin.description, :length => 80) %>
+    </h3>
+  </div>
+    <p class="pin-description">
+      Submitted by
+      <%= pin.user.email %>
+    </p>
+  </div>
