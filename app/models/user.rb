@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
+	has_many :authentications, dependent: :destroy
 	has_many :pins, dependent: :destroy
 	enum role: [:user, :admin]
 	after_initialize :set_default_role, :if => :new_record?
@@ -23,5 +24,3 @@ class User < ApplicationRecord
 	self.role = :admin
 	end
 end
-
-

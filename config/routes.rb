@@ -18,5 +18,8 @@ get '/pins' => 'pins#index'
 
 root 'users#new'
 
+get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+
+
 
 end

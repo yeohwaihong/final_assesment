@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
   <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-secondary" do %>
-     <i class="fa fa-heart"></i>
+    <i class="glyphicon glyphicon-fire logo-small-4" aria-hidden="true"></i>
+
      <%= @pin.get_upvotes.size %>
 
    <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
@@ -22,3 +23,6 @@
 
 <%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>
+
+
+<script src="/path/to/infinite-scroll.pkgd.min.js"></script>

@@ -44,6 +44,9 @@ gem 'rails_12factor', group: :production
 gem 'will_paginate'
 gem 'fog'
 gem "paperclip"
+gem 'aws-sdk'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 
 

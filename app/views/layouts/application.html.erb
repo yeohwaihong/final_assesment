@@ -14,11 +14,11 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Triggerhappy</a>
+          <a class="navbar-brand" href="/">Triggerhappy</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -28,7 +28,7 @@
 
               <a>Hello <%= current_user.name %>!</a>
           </li>
-          <li><%= link_to "Show Pins", pins_path %></li>
+          <li><%= link_to "Show Pins", pins_path, data: {turbolinks: false} %></li>
 
           <li><%= link_to "New Pin", new_pin_path %></li>
 
@@ -54,6 +54,27 @@
   </div>
 </nav>
 
+
 <%= yield %>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '444472895906779',
+      xfbml      : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 </body>
 </html>
