@@ -33,22 +33,16 @@ gem 'figaro'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'masonry-rails'
 gem 'kaminari'
-gem 'carrierwave'
 gem "mini_magick"
-gem 'cloudinary'
-gem "braintree"
 gem 'rest-client'
-gem 'sidekiq'
 gem 'searchkick'
 gem 'rails_12factor', group: :production
-gem 'will_paginate'
-gem 'fog'
 gem "paperclip"
 gem 'aws-sdk'
 gem 'omniauth'
 gem 'omniauth-facebook'
-
-
+gem 'will_paginate'
+gem 'httparty'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

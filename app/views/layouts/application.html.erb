@@ -20,6 +20,12 @@
           <li class="active">
             <a href="/">Home</a>
           </li>
+            <span class="search">
+              <%= form_tag search_path, method: "get", class: "navbar-form navbar-left" do |f| %>
+                <%= text_field_tag :term, params[:term],placeholder:"What do you feel like eating?" %>
+                <% submit_tag %>
+              <% end %>
+            </span>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -28,6 +34,9 @@
 
               <a>Hello <%= current_user.name %>!</a>
           </li>
+
+          <li><%= link_to "Recipes", recipes_path, data: {turbolinks: false} %></li>
+
           <li><%= link_to "Show Pins", pins_path, data: {turbolinks: false} %></li>
 
           <li><%= link_to "New Pin", new_pin_path %></li>
