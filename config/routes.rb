@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recipes' => 'recipes#index'
+
 	resources :pins do
 	  member do
 	    put 'like', to: 'pins#upvote'
@@ -20,6 +22,6 @@ root 'users#new'
 
 get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
-
+get '/search', to: 'pins#search', as: 'search'
 
 end
