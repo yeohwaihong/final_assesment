@@ -31,9 +31,11 @@
           <li>
 
               <% if current_user %>
-
               <a>Hello <%= current_user.name %>!</a>
           </li>
+          <% if current_user.role = "admin" %>
+
+          <li><%= link_to 'View all Users', users_path %></li>
 
           <li><%= link_to "Recipes", recipes_path, data: {turbolinks: false} %></li>
 
@@ -42,6 +44,7 @@
           <li><%= link_to "New Pin", new_pin_path %></li>
 
           <li>
+            <% end %>
             <a href="/logout">
               <span class="glyphicon glyphicon-log-in"></span>
               Logout

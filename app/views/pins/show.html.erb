@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-  <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-secondary" do %>
-    <i class="glyphicon glyphicon-fire logo-small-4" aria-hidden="true"></i>
 
-     <%= @pin.get_upvotes.size %>
-
-   <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
-   <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
-<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -16,13 +9,22 @@
 
 <p>
   <strong>Description:</strong>
+  <br />
   <%= @pin.description %>
 </p>
 
 
+<% if current_user.role = "admin" %>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+<%= link_to like_pin_path(@pin), method: :put, class: "btn btn-secondary" do %>
+<i class="fa fa-heart" aria-hidden="true"></i>
 
+   <%= @pin.get_upvotes.size %>
+
+ <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
+ <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %>
+<% end %>
+
+<% end %>
 
 <script src="/path/to/infinite-scroll.pkgd.min.js"></script>

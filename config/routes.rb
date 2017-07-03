@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get 'recipes' => 'recipes#index'
+  resources :users, controller: "users" do
+    resource :password,
+      only: [:create, :edit, :update]
+  end
 
 	resources :pins do
 	  member do
@@ -15,6 +19,8 @@ get '/logout' => 'sessions#destroy'
 
 get '/signup' => 'users#new'
 post '/users' => 'users#create'
+get '/users' => 'users#index'
+get '/users' => 'users#show'
 
 get '/pins' => 'pins#index'
 

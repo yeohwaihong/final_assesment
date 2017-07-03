@@ -1,0 +1,28 @@
+<h1>User Profile</h1>
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name%>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+
+<br><br>
+<h3>Pins</h3>
+<br>
+<table>
+  <tr>
+    <th>Pin Title</th>
+  </tr>
+<% @pins.each do |pin| %>
+  <tr>
+    <td>  <%= @pin.title %></td>
+    <td> <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
+     <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary" %></td>
+    <% end %>
+  </tr>
+</table>
+
+<br>
