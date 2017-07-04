@@ -18,9 +18,7 @@ class User < ApplicationRecord
 	return x.token unless x.nil?
 	end
 
-
-
 	def set_default_role
-	self.role = :admin
+	self.role = :user
 	end
 end

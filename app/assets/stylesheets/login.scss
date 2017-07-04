@@ -6,6 +6,17 @@ body {
   background-repeat: repeat-x;
 }
 
+.row {
+}
+
+.container {
+  position: fixed;
+  margin: auto;
+  padding-left: 350px;
+  padding-right: 15px;
+  z-index: 2;
+}
+
 .form-signin {
   max-width: 400px;
   display:block;
@@ -19,7 +30,6 @@ body {
 	padding: 38px;
 }
 .social-box{
-  margin: 0 auto;
   padding: 38px;
 }
 .social-box a{

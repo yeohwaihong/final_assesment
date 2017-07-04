@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <%= form_for :user, :html => {:class => "form-signin mg-btm"}, url: '/users' do |f| %>
@@ -6,9 +7,9 @@
     </h1>
     <div class="main">
 
-      <%= f.text_field :name, placeholder:"Name", class:"form-control"%>
-      <%= f.email_field :email, placeholder:"Email", class:"form-control"%>
-      <%= f.password_field :password, placeholder:"Password",class:"form-control" %>
+      <%= f.label :name %> <%= f.text_field :name, placeholder:"Name", class:"form-control"%>
+      <%= f.label :email %> <%= f.email_field :email, placeholder:"Email", class:"form-control"%>
+      <%= f.label :password %> <%= f.password_field :password, placeholder:"Password",class:"form-control" %>
       <%= f.submit "Continue", class:"btn btn-danger btn-block" %>
     </div>
 
@@ -33,6 +34,7 @@
 </div>
 </div>
 <% end %>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
